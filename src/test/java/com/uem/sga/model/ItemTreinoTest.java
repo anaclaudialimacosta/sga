@@ -1,7 +1,6 @@
 package com.uem.sga.model;
 
 import com.uem.sga.databuilder.TreinoDataBuilder;
-import model.*;
 import org.junit.Test;
 import org.mockito.Mock;
 

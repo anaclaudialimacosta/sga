@@ -1,8 +1,8 @@
 package com.uem.sga.databuilder;
 
-import model.Aluno;
-import model.Professor;
-import model.Treino;
+import com.uem.sga.model.Aluno;
+import com.uem.sga.model.Professor;
+import com.uem.sga.model.Treino;
 
 public class TreinoDataBuilder {
 

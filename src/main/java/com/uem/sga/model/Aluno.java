@@ -1,11 +1,16 @@
-package model;
+package com.uem.sga.model;
 
 import javax.persistence.*;
 
-@Table(name = "professor")
+
+@Table(name="aluno")
 @Entity
-public class Professor {
+public class Aluno {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+
 }
+

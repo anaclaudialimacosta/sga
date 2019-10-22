@@ -1,6 +1,5 @@
 package com.uem.sga.model;
 import com.uem.sga.databuilder.TreinoDataBuilder;
-import model.*;
 import org.junit.Test;
 
 import static com.uem.sga.databuilder.TreinoDataBuilder.CONSTRAINT_ALUNO;

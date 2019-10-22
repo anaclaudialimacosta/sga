@@ -1,4 +1,4 @@
-package model;
+package com.uem.sga.model;
 
 import org.springframework.util.Assert;
 

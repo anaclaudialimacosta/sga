@@ -1,4 +1,4 @@
-package model;
+package com.uem.sga.model;
 
 public enum TipoRepeticao {
 
