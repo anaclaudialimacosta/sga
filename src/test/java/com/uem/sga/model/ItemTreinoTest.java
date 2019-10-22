@@ -2,13 +2,11 @@ package com.uem.sga.model;
 
 import com.uem.sga.databuilder.TreinoDataBuilder;
 import model.*;
-import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.springframework.boot.test.context.SpringBootTest;
 
+import static com.uem.sga.databuilder.TreinoDataBuilder.CONSTRAINT_ALUNO;
+import static com.uem.sga.databuilder.TreinoDataBuilder.CONSTRAINT_PROFESSOR;
 import static org.junit.Assert.*;
 
 
@@ -36,7 +34,10 @@ public class ItemTreinoTest {
         assertEquals(exercicio, itemTreino.getExercicio());
         assertEquals(10, itemTreino.getQtdeRepeticao(), 0.0001);
         assertEquals(TipoRepeticao.VEZES, itemTreino.getTipoRepeticao());
+        assertEquals( CONSTRAINT_ALUNO, treino.getAluno());
+        assertEquals( CONSTRAINT_PROFESSOR, treino.getProfessorResponsavel());
         assertEquals("Usar a barra",itemTreino.getObservacao());
+        assertFalse(treino.getExerciciosTreino().isEmpty());
     }
 
     @Test

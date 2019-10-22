@@ -98,6 +98,9 @@ public class ItemTreino {
            Assert.notNull(this.itemTreino.qtdeRepeticao, "Quantidade de Repetições é um campo obrigatorio");
            Assert.notNull(this.itemTreino.tipoRepeticao, "Tipo de Repetição é campo obrigatório");
            Assert.notNull(this.itemTreino.treino, "O item de treino deve ser aliado a um treino");
+
+           this.itemTreino.treino.adicionarItemNoTreino(this.itemTreino);
+
             return this.itemTreino;
        }
 
