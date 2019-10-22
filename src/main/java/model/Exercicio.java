@@ -30,4 +30,8 @@ public enum Exercicio {
         this.membro = membro;
     }
 
+    @Override
+    public String toString() {
+        return this.nome;
+    }
 }

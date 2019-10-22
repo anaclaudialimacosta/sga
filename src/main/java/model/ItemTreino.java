@@ -23,6 +23,9 @@ public class ItemTreino {
     @Column(name="observacao")
     private String observacao;
 
+    @ManyToOne
+    @JoinColumn(name="treino_id", nullable = false)
+    private Treino treino;
 
     public static Builder builder(){
         return  new ItemTreino.Builder();
