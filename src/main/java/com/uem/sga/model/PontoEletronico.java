@@ -11,8 +11,11 @@ public class PontoEletronico {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(name = "idFuncionario")
     private Long idFuncionario;
+
+    @Column(name = "classeFuncionario")
+    private TipoUsuario classe;
 
     @Column(name = "horaInicio")
     private Time horaInicio;
@@ -27,6 +30,14 @@ public class PontoEletronico {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public TipoUsuario getClasse() {
+        return classe;
+    }
+
+    public void setClasse(TipoUsuario classe) {
+        this.classe = classe;
     }
 
     public Long getIdFuncionario() {
@@ -51,6 +62,9 @@ public class PontoEletronico {
 
     public void setHoraFim(Time horaFim) {
         this.horaFim = horaFim;
+    }
+
+    public PontoEletronico() {
     }
 }
 
