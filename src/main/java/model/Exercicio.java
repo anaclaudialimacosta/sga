@@ -29,6 +29,14 @@ public enum Exercicio {
         this.membro = membro;
     }
 
+    public String getMembro() {
+        return membro;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
     @Override
     public String toString() {
         return this.nome;
