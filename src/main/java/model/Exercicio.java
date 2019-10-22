@@ -21,7 +21,6 @@ public enum Exercicio {
     PULLEY("Pulley", "Braço");
 
 
-
     private String nome;
     private String membro;
 
@@ -30,4 +29,8 @@ public enum Exercicio {
         this.membro = membro;
     }
 
+    @Override
+    public String toString() {
+        return this.nome;
+    }
 }
