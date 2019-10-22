@@ -1,5 +1,7 @@
 package model;
 
+import org.springframework.util.Assert;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -81,6 +83,8 @@ public class Treino {
 
         public Treino buiild(){
             this.treino.exerciciosTreino = new ArrayList<>();
+            Assert.notNull(this.treino.aluno, "Aluno é campo obrigatório");
+            Assert.notNull(this.treino.professorResponsavel, "Professor Responsável é obrigatório");
             return  this.treino;
         }
 
