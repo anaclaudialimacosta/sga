@@ -1,11 +1,17 @@
 package model;
 
+import org.springframework.util.Assert;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="itemTreino")
 public class ItemTreino {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
     @NotNull
     @Enumerated(EnumType.STRING)
@@ -31,6 +37,30 @@ public class ItemTreino {
 
     }
 
+    public Exercicio getExercicio() {
+        return exercicio;
+    }
+
+    public Integer getQtdeRepeticao() {
+        return qtdeRepeticao;
+    }
+
+    public String getObservacao() {
+        return observacao;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public TipoRepeticao getTipoRepeticao() {
+        return tipoRepeticao;
+    }
+
+    public Treino getTreino() {
+        return treino;
+    }
+
     public static Builder builder(){
         return  new ItemTreino.Builder();
     }
@@ -44,6 +74,10 @@ public class ItemTreino {
 
        public Builder exercicio(Exercicio exercicio){
            this.itemTreino.exercicio = exercicio;
+           return this;
+       }
+       public Builder treino(Treino treino){
+           this.itemTreino.treino = treino;
            return this;
        }
 
@@ -60,7 +94,11 @@ public class ItemTreino {
            return this;
        }
        public ItemTreino build(){
-        return this.itemTreino;
+           Assert.notNull(this.itemTreino.exercicio, "Exercício é um campo obrigatorio");
+           Assert.notNull(this.itemTreino.qtdeRepeticao, "Quantidade de Repetições é um campo obrigatorio");
+           Assert.notNull(this.itemTreino.tipoRepeticao, "Tipo de Repetição é campo obrigatório");
+           Assert.notNull(this.itemTreino.treino, "O item de treino deve ser aliado a um treino");
+            return this.itemTreino;
        }
 
     }

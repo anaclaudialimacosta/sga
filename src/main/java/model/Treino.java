@@ -2,6 +2,7 @@ package model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -29,6 +30,23 @@ public class Treino {
 
     public static Builder builder(){
         return new Treino.Builder();
+
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public Aluno getAluno() {
+        return aluno;
+    }
+
+    public Professor getProfessorResponsavel() {
+        return professorResponsavel;
+    }
+
+    public List<ItemTreino> getExerciciosTreino() {
+        return exerciciosTreino;
     }
 
     public void adicionarItemNoTreino(ItemTreino itemTreino){
@@ -46,7 +64,9 @@ public class Treino {
         private Treino treino;
 
         public Builder(){
+
             this.treino = new Treino();
+
         }
 
         public Builder professor(Professor professor){
@@ -60,6 +80,7 @@ public class Treino {
         }
 
         public Treino buiild(){
+            this.treino.exerciciosTreino = new ArrayList<>();
             return  this.treino;
         }
 
