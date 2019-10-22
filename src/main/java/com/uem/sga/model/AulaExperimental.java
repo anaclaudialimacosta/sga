@@ -2,8 +2,9 @@ package com.uem.sga.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.sql.Date;
 import java.sql.Time;
-import java.util.Date;
+import java.util.Optional;
 
 
 @Entity
@@ -17,7 +18,6 @@ public class AulaExperimental {
     @Column(name = "dataAgendamento")
     private Date dataAgendamento;
 
-    @NotNull
     @OneToOne
     @JoinColumn(name = "professor_id")
     private Professor professorAlocado;
@@ -87,8 +87,8 @@ public class AulaExperimental {
     }
 
 
-    public static AvaliacaoFisica.Builder builder(){
-        return new AvaliacaoFisica.Builder();
+    public static Builder builder(){
+        return new Builder();
 
     }
 
