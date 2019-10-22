@@ -33,7 +33,5 @@ public class Aluno {
         this.name = name;
     }
 
-
-
 }
 
