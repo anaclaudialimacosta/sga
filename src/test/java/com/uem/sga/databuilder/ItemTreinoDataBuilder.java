@@ -1,9 +1,9 @@
 package com.uem.sga.databuilder;
 
-import model.Exercicio;
-import model.ItemTreino;
-import model.TipoRepeticao;
-import model.Treino;
+import com.uem.sga.model.Exercicio;
+import com.uem.sga.model.ItemTreino;
+import com.uem.sga.model.TipoRepeticao;
+import com.uem.sga.model.Treino;
 
 public class ItemTreinoDataBuilder {
     public static Treino CONSTRAINT_TREINO = TreinoDataBuilder.fullTreino();
