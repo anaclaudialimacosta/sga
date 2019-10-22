@@ -19,6 +19,17 @@ public class AulaExperimentalDTO {
 
     private Time horaFim;
 
+
+    private  boolean  desmarcada;
+
+    public boolean isDesmarcada() {
+        return desmarcada;
+    }
+
+    public void setDesmarcada(boolean desmarcada) {
+        this.desmarcada = desmarcada;
+    }
+
     public Date getDataAgendamento() {
         return dataAgendamento;
     }
