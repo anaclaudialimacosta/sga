@@ -21,7 +21,6 @@ public enum Exercicio {
     PULLEY("Pulley", "Braço");
 
 
-
     private String nome;
     private String membro;
 

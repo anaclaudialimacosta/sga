@@ -27,6 +27,10 @@ public class ItemTreino {
     @JoinColumn(name="treino_id", nullable = false)
     private Treino treino;
 
+    ItemTreino(){
+
+    }
+
     public static Builder builder(){
         return  new ItemTreino.Builder();
     }
@@ -58,7 +62,6 @@ public class ItemTreino {
        public ItemTreino build(){
         return this.itemTreino;
        }
-
 
     }
 }
