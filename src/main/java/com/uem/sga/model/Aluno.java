@@ -11,19 +11,20 @@ public class Aluno {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
+    @Column(name = "nome")
     private String name;
 
-    @Column
+    @Column(name = "email")
     private String email;
 
-    @Column
+    @Column(name = "telefone")
     private String telefone;
 
-    @Column
+    @Column(name = "endereco")
     private String endereco;
 
-    @Column
+    @OneToOne
+    @JoinColumn(name="plano_id", nullable = false)
     private Plano plano;
 
     public Aluno() {
