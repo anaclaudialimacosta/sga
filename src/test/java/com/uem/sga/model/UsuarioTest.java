@@ -73,7 +73,8 @@ public class UsuarioTest {
         }catch (Exception e){
             mensagem = e.getMessage();
         }
-        Assert.assertEquals("Senha é campo Obrigatório",mensagem);
+        Assert.assertEquals("Senha é" +
+                "campo Obrigatório",mensagem);
     }
 
     @Test
@@ -90,7 +91,5 @@ public class UsuarioTest {
         }
         Assert.assertEquals("Tipo é um campo Obrigatorio",mensagem);
     }
-
-
 
 }
