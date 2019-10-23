@@ -6,7 +6,8 @@ import org.mockito.Mock;
 
 import static com.uem.sga.databuilder.TreinoDataBuilder.CONSTRAINT_ALUNO;
 import static com.uem.sga.databuilder.TreinoDataBuilder.CONSTRAINT_PROFESSOR;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 
 public class ItemTreinoTest {

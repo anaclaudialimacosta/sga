@@ -4,7 +4,6 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.sql.Date;
 import java.sql.Time;
-import java.util.Optional;
 
 
 @Entity
