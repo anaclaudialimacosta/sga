@@ -14,17 +14,16 @@ public class Aluno {
     @Column(name = "nome")
     private String name;
 
-    @Column(name = "email")
+    @Column
     private String email;
 
-    @Column(name = "telefone")
+    @Column
     private String telefone;
 
-    @Column(name = "endereco")
+    @Column
     private String endereco;
 
-    @OneToOne
-    @JoinColumn(name="plano_id", nullable = false)
+    @Column
     private Plano plano;
 
     public Aluno() {

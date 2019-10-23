@@ -13,14 +13,14 @@ public class Plano {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "valorMensal")
+    @Column
     private PrecosAtividades valorMensal;
 
-    @Column(name = "diaVencimento")
+    @Column
     private int diaVencimento;
 
-    @Column(name = "atividades")
-    private String atividades;
+    @Column
+    private List<String> atividades;
 
     Plano() {
     }
@@ -35,15 +35,13 @@ public class Plano {
 
     public void setDiaVencimento(int diaVencimento) { this.diaVencimento = diaVencimento; }
 
-    public void setAtividades(String atividades) { this.atividades = atividades; }
-
     public PrecosAtividades getValorMensal() { return valorMensal; }
 
     public void setValorMensal(PrecosAtividades valorMensal) { this.valorMensal = valorMensal; }
 
     public int getDiaVencimento() { return diaVencimento; }
 
-    public String getAtividades() { return atividades; }
+    public List<String> getAtividades() { return atividades; }
 
     public static class Builder{
         private Plano plano;
@@ -57,7 +55,7 @@ public class Plano {
             return this;
         }
 
-        public Builder Atividades(String atividades){
+        public Builder Atividades(List<String> atividades){
             this.plano.atividades = atividades;
             return this;
         }
