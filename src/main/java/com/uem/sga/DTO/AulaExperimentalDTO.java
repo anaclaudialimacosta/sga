@@ -1,8 +1,5 @@
 package com.uem.sga.DTO;
 
-import com.uem.sga.model.Aluno;
-import com.uem.sga.model.Professor;
-
 import java.sql.Date;
 import java.sql.Time;
 
