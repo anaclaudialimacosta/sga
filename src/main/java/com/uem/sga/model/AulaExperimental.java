@@ -2,6 +2,7 @@ package com.uem.sga.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.sql.Time;
 import java.util.Date;
 
 
@@ -25,6 +26,29 @@ public class AulaExperimental {
     @OneToOne
     @JoinColumn(name = "aluno_id")
     private Aluno alunoAlocado;
+
+
+    @Column(name = "horaInicio")
+    private Time horaInicio;
+
+    @Column(name = "horaFim")
+    private Time horaFim;
+
+    public Time getHoraInicio() {
+        return horaInicio;
+    }
+
+    public void setHoraInicio(Time horaInicio) {
+        this.horaInicio = horaInicio;
+    }
+
+    public Time getHoraFim() {
+        return horaFim;
+    }
+
+    public void setHoraFim(Time horaFim) {
+        this.horaFim = horaFim;
+    }
 
 
     public AulaExperimental() {
@@ -88,6 +112,15 @@ public class AulaExperimental {
 
         public Builder professorAlocado(Professor professor) {
             this.aulaExperimental.professorAlocado = professor;
+            return this;
+        }
+
+        public Builder horaInicio(Time horaInicio){
+            this.aulaExperimental.horaInicio = horaInicio;
+            return this;
+        }
+        public Builder horaFim(Time horaFim){
+            this.aulaExperimental.horaFim = horaFim;
             return this;
         }
 
