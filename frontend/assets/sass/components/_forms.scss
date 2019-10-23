@@ -1,0 +1,32 @@
+.form {
+    label {
+        display: block;
+    }
+    .input-group {
+        margin-bottom: 10px;
+    }
+    .form-control, select {
+        display: block;
+        width: 100%;
+        color: $body-color;
+        background: #fff;
+        border: 1px solid $body-color;
+        border-radius: 0;
+        @include placeholder { color: $body-color; }
+    }
+    select {
+        appearance: none;
+    }
+    textarea {}
+    .valid-feedback {
+        display: none;
+        margin: 0;
+    }
+    &.was-validated {
+        .form-control:valid { border-color: $green; }
+        .form-control:invalid {
+            border-color: $red;
+            ~  .valid-feedback { display: block; }
+        }
+    }
+}
