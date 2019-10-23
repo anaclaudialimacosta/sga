@@ -8,10 +8,10 @@ public class AulaExperimentalDTO {
 
     private Date dataAgendamento;
 
-    private Long professorAlocado;
+    private Long idProfessor;
 
 
-    private Long alunoAlocado;
+    private Long idVisitante;
 
 
     private Time horaInicio;
@@ -27,20 +27,20 @@ public class AulaExperimentalDTO {
         this.dataAgendamento = dataAgendamento;
     }
 
-    public Long getProfessorAlocado() {
-        return professorAlocado;
+    public Long getIdProfessor() {
+        return idProfessor;
     }
 
-    public void setProfessorAlocado(Long professorAlocado) {
-        this.professorAlocado = professorAlocado;
+    public void setIdProfessor(Long idProfessor) {
+        this.idProfessor = idProfessor;
     }
 
-    public Long getAlunoAlocado() {
-        return alunoAlocado;
+    public Long getIdVisitante() {
+        return idVisitante;
     }
 
-    public void setAlunoAlocado(Long alunoAlocado) {
-        this.alunoAlocado = alunoAlocado;
+    public void setIdVisitante(Long idVisitante) {
+        this.idVisitante = idVisitante;
     }
 
     public Time getHoraInicio() {

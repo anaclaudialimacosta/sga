@@ -2,15 +2,12 @@ package com.uem.sga.model;
 
 import javax.persistence.*;
 
-@Table(name = "professor")
 @Entity
-public class Professor {
+@Table(name="visitante")
+public class Visitante {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column
-    private String name;
 
     public Long getId() {
         return id;
@@ -27,4 +24,7 @@ public class Professor {
     public void setName(String name) {
         this.name = name;
     }
+
+    @Column
+    private String name;
 }

@@ -19,12 +19,12 @@ public class AvaliacaoFisica {
     private Date dataAgendamento;
 
     @NotNull
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "professor_id")
     private Professor professorAlocado;
 
     @NotNull
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "aluno_id")
     private Aluno alunoAlocado;
 
