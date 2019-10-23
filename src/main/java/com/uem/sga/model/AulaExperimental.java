@@ -2,8 +2,8 @@ package com.uem.sga.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.sql.Date;
 import java.sql.Time;
+import java.util.Date;
 
 
 @Entity
@@ -17,14 +17,14 @@ public class AulaExperimental {
     @Column(name = "dataAgendamento")
     private Date dataAgendamento;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "professor_id")
     private Professor professorAlocado;
 
     @NotNull
-    @OneToOne
-    @JoinColumn(name = "aluno_id")
-    private Aluno alunoAlocado;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "visitante_id")
+    private Visitante visitanteAlocado;
 
 
     @Column(name = "horaInicio")
@@ -77,14 +77,14 @@ public class AulaExperimental {
         this.professorAlocado = professorAlocado;
     }
 
-    public Aluno getAlunoAlocado() {
-        return alunoAlocado;
+
+    public Visitante getVisitanteAlocado() {
+        return visitanteAlocado;
     }
 
-    public void setAlunoAlocado(Aluno alunoAlocado) {
-        this.alunoAlocado = alunoAlocado;
+    public void setVisitanteAlocado(Visitante visitanteAlocado) {
+        this.visitanteAlocado = visitanteAlocado;
     }
-
 
     public static Builder builder(){
         return new Builder();
@@ -104,8 +104,8 @@ public class AulaExperimental {
             return this;
         }
 
-        public Builder alunoAlocado(Aluno aluno) {
-            this.aulaExperimental.alunoAlocado = aluno;
+        public Builder visitanteAlocado(Visitante visitante) {
+            this.aulaExperimental.visitanteAlocado = visitante;
             return this;
         }
 
