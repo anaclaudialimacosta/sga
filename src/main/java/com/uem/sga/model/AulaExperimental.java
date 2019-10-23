@@ -6,12 +6,11 @@ import java.util.Date;
 
 
 @Entity
-@Table(name="avaliacaoFisica")
-public class AvaliacaoFisica {
+@Table(name="aulaExperimental")
+public class AulaExperimental {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
 
     @NotNull
     @Column(name = "dataAgendamento")
@@ -27,7 +26,8 @@ public class AvaliacaoFisica {
     @JoinColumn(name = "aluno_id")
     private Aluno alunoAlocado;
 
-    public AvaliacaoFisica() {
+
+    public AulaExperimental() {
     }
 
     public Long getId() {
@@ -63,36 +63,36 @@ public class AvaliacaoFisica {
     }
 
 
-    public static Builder builder(){
-        return new Builder();
+    public static AvaliacaoFisica.Builder builder(){
+        return new AvaliacaoFisica.Builder();
 
     }
 
     public static class Builder {
 
-        private AvaliacaoFisica avaliacaoFisica;
+        private AulaExperimental aulaExperimental;
 
-        public Builder(){
-            this.avaliacaoFisica = new AvaliacaoFisica();
+        public Builder() {
+            this.aulaExperimental = new AulaExperimental();
         }
 
-        public  Builder dataAgendamento(Date data){
-            this.avaliacaoFisica.dataAgendamento = data;
+        public Builder dataAgendamento(Date data) {
+            this.aulaExperimental.dataAgendamento = data;
             return this;
         }
 
-        public  Builder alunoAlocado(Aluno aluno){
-            this.avaliacaoFisica.alunoAlocado = aluno;
+        public Builder alunoAlocado(Aluno aluno) {
+            this.aulaExperimental.alunoAlocado = aluno;
             return this;
         }
 
-        public  Builder professorAlocado(Professor professor){
-            this.avaliacaoFisica.professorAlocado = professor;
+        public Builder professorAlocado(Professor professor) {
+            this.aulaExperimental.professorAlocado = professor;
             return this;
         }
 
-        public AvaliacaoFisica build(){
-            return  this.avaliacaoFisica;
+        public AulaExperimental build() {
+            return this.aulaExperimental;
         }
     }
 }
