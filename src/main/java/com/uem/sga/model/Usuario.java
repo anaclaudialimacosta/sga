@@ -1,6 +1,5 @@
 package com.uem.sga.model;
 
-
 import org.springframework.util.Assert;
 import javax.persistence.*;
 
@@ -18,6 +17,10 @@ public class Usuario {
     @Column(name="senha")
     private String senha;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name="tipo")
+    private TipoUsuario tipo;
+
     Usuario(){}
 
     public Long getId() {
@@ -28,7 +31,11 @@ public class Usuario {
         return this.username;
     }
 
-    public Builder builder(){
+    public TipoUsuario getTipo() {
+        return tipo;
+    }
+
+    public static Builder builder(){
         return new Usuario.Builder();
     }
 
@@ -49,9 +56,15 @@ public class Usuario {
             return this;
         }
 
+        public Builder tipo(TipoUsuario tipo){
+            this.usuario.tipo = tipo;
+            return this;
+        }
+
         public Usuario build(){
             Assert.hasText(this.usuario.senha, "Senha é campo Obrigatório");
             Assert.hasText(this.usuario.username, "Usuario é campo Obrigatorio");
+            Assert.notNull(this.usuario.tipo, "Tipo é um campo Obrigatorio");
             return this.usuario;
         }
 
