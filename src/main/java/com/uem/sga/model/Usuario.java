@@ -6,7 +6,6 @@ import javax.persistence.*;
 @Table(name = "usuario")
 @Entity
 public class Usuario {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -79,6 +78,9 @@ public class Usuario {
 
 
 
+    }
+    public String getSenha() {
+        return senha;
     }
 }
 

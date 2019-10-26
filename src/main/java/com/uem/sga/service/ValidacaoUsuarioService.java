@@ -18,7 +18,8 @@ public class ValidacaoUsuarioService {
 
         Optional<Usuario> usuario = usuarioRepository.findByUsername(username);
         if(usuario.isPresent()){
-            usuario.get().equals()
+            return usuario.get().getSenha().equals(senha);
         }
+        return false;
     }
 }
