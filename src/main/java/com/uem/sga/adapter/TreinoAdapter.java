@@ -8,7 +8,7 @@ import java.util.List;
 
 public class TreinoAdapter {
 
-    public TreinoResponseDTO entityToResponse(Treino treino){
+    public static  TreinoResponseDTO entityToResponse(Treino treino){
         TreinoResponseDTO treinoResponse= new TreinoResponseDTO();
         treinoResponse.setAluno(treino.getAluno());
         treinoResponse.setProfessorResponsavel(treino.getProfessorResponsavel());
