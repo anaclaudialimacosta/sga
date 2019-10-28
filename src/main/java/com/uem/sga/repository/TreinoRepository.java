@@ -1,4 +1,9 @@
 package com.uem.sga.repository;
 
-public interface TreinoRepository {
+import com.uem.sga.model.Treino;
+import org.springframework.data.repository.CrudRepository;
+
+public interface TreinoRepository  extends CrudRepository<Treino,Long> {
+
+
 }
