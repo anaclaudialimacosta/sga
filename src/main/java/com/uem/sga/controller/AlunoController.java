@@ -22,5 +22,4 @@ public class AlunoController {
     @RequestMapping(value="/cancelarMatricula", method= RequestMethod.POST)
     public Aluno cancelarMatriculaAluno() { return null; }
 
-
 }
