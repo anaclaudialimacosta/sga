@@ -6,10 +6,10 @@ import java.sql.Time;
 public class AulaExperimentalDTO {
 
 
+    private Long id;
     private Date dataAgendamento;
 
     private Long idProfessor;
-
 
     private Long idVisitante;
 
@@ -21,6 +21,14 @@ public class AulaExperimentalDTO {
 
 
     private  boolean  desmarcada;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public boolean isDesmarcada() {
         return desmarcada;

@@ -19,30 +19,30 @@ public class AulaExpermentalController {
     @Autowired
     AulaExperimentalService aulaExperimentalService;
 
-    @RequestMapping(value="/agendar", method= RequestMethod.POST)
+    @RequestMapping(method= RequestMethod.POST)
     public AulaExperimental agendarAulaExperimental(@RequestBody AulaExperimentalDTO dto) {
         validaHorarioAgendado(dto);
         return aulaExperimentalService.agendarAulaExperimental(dto);
     }
 
-    @RequestMapping(value ="/listar", method = RequestMethod.GET)
+    @RequestMapping( method = RequestMethod.GET)
     public List<AulaExperimental> listarAulasExperimentais(@RequestParam Date dataAgendada){
         return aulaExperimentalService.listarAulasExperimentais(dataAgendada);
     }
 
-    @RequestMapping(value="/excluir/{id}", method = RequestMethod.POST)
-    public void deletarAulaExperimental(@PathVariable Long id) {
+    @RequestMapping( method = RequestMethod.POST)
+    public void deletarAulaExperimental(@RequestParam Long id) {
          aulaExperimentalService.deletarAulaExperimental(id);
     }
 
-    @RequestMapping(value = "/alterar_aula/{id}", method = RequestMethod.GET)
-    public AulaExperimental  editarAulaExperimental(@RequestBody AulaExperimentalDTO dto, @PathVariable Long id){
+    @RequestMapping( method = RequestMethod.GET)
+    public AulaExperimental  editarAulaExperimental(@RequestBody AulaExperimentalDTO dto){
         validaHorarioAgendado(dto);
-        if (!aulaExperimentalService.findAulaToEdit(id)){
+        if (!aulaExperimentalService.findAulaToEdit(dto.getId())){
 
         return aulaExperimentalService.agendarAulaExperimental(dto);
         }else{
-            return aulaExperimentalService.editarAulaExperimental(id, dto);
+            return aulaExperimentalService.editarAulaExperimental(dto.getId(), dto);
         }
     }
 
