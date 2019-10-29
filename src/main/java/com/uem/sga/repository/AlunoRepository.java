@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface AlunoRepository extends CrudRepository<Aluno, Long> {
 
     Aluno findAlunoById(Long idAluno);
+
 }
