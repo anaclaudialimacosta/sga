@@ -14,5 +14,13 @@ public class AlunoController {
         return null;
     }
 
+    @RequestMapping(value="/editar", method= RequestMethod.POST)
+    public Aluno editarAluno() {
+        return null;
+    }
+
+    @RequestMapping(value="/cancelarMatricula", method= RequestMethod.POST)
+    public Aluno cancelarMatriculaAluno() { return null; }
+
 
 }
