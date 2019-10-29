@@ -35,6 +35,8 @@ public class Plano {
 
     public void setDiaVencimento(int diaVencimento) { this.diaVencimento = diaVencimento; }
 
+    public void setAtividades(String atividades) { this.atividades = atividades; }
+
     public PrecosAtividades getValorMensal() { return valorMensal; }
 
     public void setValorMensal(PrecosAtividades valorMensal) { this.valorMensal = valorMensal; }
