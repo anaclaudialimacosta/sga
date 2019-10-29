@@ -19,6 +19,7 @@ public class SalvarTreinoService {
                 .professor(treinoPersistDTO.getProfessorResponsavel())
                 .buiild();
         treinoRepository.save(treino);
+        return treino;
     }
 
 }
