@@ -6,11 +6,10 @@ import com.uem.sga.model.AvaliacaoFisica;
 import com.uem.sga.service.AvaliacaoFisicaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
+
+import java.util.List;
 
 
 @RestController
@@ -20,7 +19,7 @@ public class AvaliacaoFisicaController {
     @Autowired
     AvaliacaoFisicaService avaliacaoFisicaService;
 
-    @RequestMapping(value="/agendar", method= RequestMethod.POST)
+    @RequestMapping(method= RequestMethod.POST)
     public AvaliacaoFisica agendarAulaExperimental(@RequestBody AvaliacaoFisicaDTO dto) {
         validaHorarioAgendado(dto);
         return avaliacaoFisicaService.agendarAvaliacaoFisica(dto);
@@ -32,4 +31,20 @@ public class AvaliacaoFisicaController {
     }
 
 
+    @RequestMapping(method = RequestMethod.GET)
+    public AvaliacaoFisica deletarAgendamentoAvaliacaoFisica(@RequestParam Long id){
+        return  avaliacaoFisicaService.deletarAgendamento(id);
+    }
+
+
+    @RequestMapping(method = RequestMethod.GET, value = "/listar")
+    public List<AvaliacaoFisica> listarTodosAgendamentos(){
+        return  avaliacaoFisicaService.listarAvaliacoesAgendadas();
+    }
+
+
+    @RequestMapping(method = RequestMethod.PUT)
+    public AvaliacaoFisica editarAgendamentoAvaliacaoFisica(@RequestBody AvaliacaoFisicaDTO avaliacaoFisicaDTO){
+        return  avaliacaoFisicaService.editarAvaliacaoAgendada(avaliacaoFisicaDTO);
+    }
 }

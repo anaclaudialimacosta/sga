@@ -5,21 +5,25 @@ import java.sql.Time;
 
 public class AvaliacaoFisicaDTO {
 
+    private  Long id;
 
     private Date dataAgendamento;
 
-
     private Long professorAlocado;
-
 
     private Long alunoAlocado;
 
-
-
     private Time horaInicio;
 
-
     private Time horaFim;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public Date getDataAgendamento() {
         return dataAgendamento;
