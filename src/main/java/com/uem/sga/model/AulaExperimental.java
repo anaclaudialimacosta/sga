@@ -33,6 +33,18 @@ public class AulaExperimental {
     @Column(name = "horaFim")
     private Time horaFim;
 
+
+    @Column(name = "desmarcada")
+    private boolean desmarcada;
+
+    public boolean isDesmarcada() {
+        return desmarcada;
+    }
+
+    public void setDesmarcada(boolean desmarcada) {
+        this.desmarcada = desmarcada;
+    }
+
     public Time getHoraInicio() {
         return horaInicio;
     }
