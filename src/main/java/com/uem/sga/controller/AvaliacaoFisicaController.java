@@ -25,19 +25,13 @@ public class AvaliacaoFisicaController {
         return avaliacaoFisicaService.agendarAvaliacaoFisica(dto);
     }
 
-
-    protected void validaHorarioAgendado(AvaliacaoFisicaDTO dto){
-        if (dto.getHoraInicio().after(dto.getHoraFim())) throw new ResponseStatusException(HttpStatus.CONFLICT, "Horário Invalido");
-    }
-
-
-    @RequestMapping(method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.DELETE)
     public AvaliacaoFisica deletarAgendamentoAvaliacaoFisica(@RequestParam Long id){
         return  avaliacaoFisicaService.deletarAgendamento(id);
     }
 
 
-    @RequestMapping(method = RequestMethod.GET, value = "/listar")
+    @RequestMapping(method = RequestMethod.GET)
     public List<AvaliacaoFisica> listarTodosAgendamentos(){
         return  avaliacaoFisicaService.listarAvaliacoesAgendadas();
     }
@@ -46,5 +40,9 @@ public class AvaliacaoFisicaController {
     @RequestMapping(method = RequestMethod.PUT)
     public AvaliacaoFisica editarAgendamentoAvaliacaoFisica(@RequestBody AvaliacaoFisicaDTO avaliacaoFisicaDTO){
         return  avaliacaoFisicaService.editarAvaliacaoAgendada(avaliacaoFisicaDTO);
+    }
+
+    protected void validaHorarioAgendado(AvaliacaoFisicaDTO dto){
+        if (dto.getHoraInicio().after(dto.getHoraFim())) throw new ResponseStatusException(HttpStatus.CONFLICT, "Horário Invalido");
     }
 }

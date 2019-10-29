@@ -30,16 +30,15 @@ public class AulaExpermentalController {
         return aulaExperimentalService.listarAulasExperimentais(dataAgendada);
     }
 
-    @RequestMapping( method = RequestMethod.POST)
+    @RequestMapping( method = RequestMethod.DELETE)
     public void deletarAulaExperimental(@RequestParam Long id) {
          aulaExperimentalService.deletarAulaExperimental(id);
     }
 
-    @RequestMapping( method = RequestMethod.GET)
+    @RequestMapping( method = RequestMethod.PUT)
     public AulaExperimental  editarAulaExperimental(@RequestBody AulaExperimentalDTO dto){
         validaHorarioAgendado(dto);
         if (!aulaExperimentalService.findAulaToEdit(dto.getId())){
-
         return aulaExperimentalService.agendarAulaExperimental(dto);
         }else{
             return aulaExperimentalService.editarAulaExperimental(dto.getId(), dto);
