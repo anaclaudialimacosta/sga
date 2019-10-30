@@ -39,6 +39,15 @@ public class Usuario {
         return new Usuario.Builder();
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Usuario) {
+            return this.username.equals(((Usuario) obj).username) && this.senha.equals(((Usuario) obj).senha);
+        } else {
+            return false;
+        }
+    }
+
     public static class Builder{
         private Usuario usuario;
 
@@ -69,5 +78,7 @@ public class Usuario {
         }
 
 
+
     }
 }
+
